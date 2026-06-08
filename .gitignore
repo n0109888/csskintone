@@ -4,6 +4,7 @@
 # Editor / tooling
 .vscode/
 .claude/
+CLAUDE.md
 *.log
 
 # Dependencies
