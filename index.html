@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cs2tone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <header class="topbar">
+    <div class="brand">cs2<span>tone</span></div>
+  </header>
+
+  <main class="stage">
+    <h1 class="skin-title" id="skin-title">ohnePixel <span class="sep">|</span> ACDC</h1>
+
+    <div class="board" id="board">
+      <!-- The photo, with the logo recolored -->
+      <section class="skin-panel">
+        <figure class="canvas-fig">
+          <figcaption class="canvas-cap" id="cap-guess" hidden>Your guess</figcaption>
+          <div class="canvas-wrap">
+            <canvas id="skin"></canvas>
+            <div id="loading" class="loading">loading…</div>
+          </div>
+        </figure>
+        <!-- Revealed after lock-in: the real photo with its true color -->
+        <figure class="canvas-fig" id="orig-fig" hidden>
+          <figcaption class="canvas-cap">Original</figcaption>
+          <div class="canvas-wrap">
+            <canvas id="skin-original"></canvas>
+          </div>
+        </figure>
+      </section>
+
+      <!-- Right slot: picker and result share the same space (no layout shift) -->
+      <div class="right-slot">
+      <!-- The HSB picker -->
+      <section class="picker-panel" id="picker">
+        <div class="picker-body">
+          <div class="bars">
+            <div class="bar bar-hue" id="bar-hue"><div class="handle" id="h-hue"></div></div>
+            <div class="bar bar-sat" id="bar-sat"><div class="handle" id="h-sat"></div></div>
+            <div class="bar bar-val" id="bar-val"><div class="handle" id="h-val"></div></div>
+          </div>
+          <div class="preview" id="preview"></div>
+        </div>
+
+        <div class="picker-actions">
+          <button class="round-btn check" id="check" aria-label="Submit guess">✓</button>
+        </div>
+      </section>
+
+      <!-- The result card -->
+      <section class="result-card" id="result" hidden>
+        <div class="rc-top" id="rc-top">
+          <div class="rc-info">
+            <span class="rc-label">Your selection</span>
+          </div>
+          <div class="rc-score">
+            <span id="rc-score">0.00</span>
+            <small id="rc-msg">—</small>
+          </div>
+        </div>
+        <div class="rc-bottom" id="rc-bottom">
+          <div class="rc-info">
+            <span class="rc-label">Original</span>
+          </div>
+          <button class="rc-next" id="next" aria-label="Try again">→</button>
+        </div>
+      </section>
+      </div>
+    </div>
+
+    <!-- End-of-run summary (compact) -->
+    <section class="summary-card" id="summary" hidden>
+      <div class="summary-head">
+        <span class="summary-avg"><strong id="sum-avg">0.00</strong> avg</span>
+      </div>
+      <ul class="summary-list" id="sum-list"></ul>
+      <button id="play-again" class="submit">Play again</button>
+    </section>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

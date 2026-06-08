@@ -1,0 +1,10 @@
+{
+  "name": "csskintone",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Guess the tone of a CS skin's finish — base build with AWP | Dragon Lore.",
+  "scripts": {
+    "dev": "python3 server.py 5173",
+    "start": "python3 server.py 5173"
+  }
+}

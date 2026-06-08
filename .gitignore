@@ -3,6 +3,7 @@
 
 # Editor / tooling
 .vscode/
+.claude/
 *.log
 
 # Dependencies
